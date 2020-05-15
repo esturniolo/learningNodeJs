@@ -17,9 +17,12 @@ readline.question(`Ingrese un momento del día -mañana, tarde o noche-: `, (mom
         momentoMinutosT = randomIntInc(0,59)
         console.log(`Son las ${momentoHoraT}:${momentoMinutosT}. Buenas tardes.`)
     } else if (momento == "noche"){
-          momentoHoraN = randomIntInc(20,23)
-          momentoMinutosN = randomIntInc(0,59)
-          console.log(`Son las ${momentoHoraN}:${momentoMinutosN}. Buenas noches.`)
+        momentoHoraN = randomIntInc(20,24)
+        if (momentoHoraN >= 24){
+          momentoHoraN = momentoHoraN - 24
+        }
+        momentoMinutosN = randomIntInc(0,59)
+        console.log(`Son las ${momentoHoraN}:${momentoMinutosN}. Buenas noches.`)
         }
   console.log(`Programa terminado!`)
   readline.close()
